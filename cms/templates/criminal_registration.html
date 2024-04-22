@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Criminal Registration</title>
+</head>
+<body>
+    <h1>Criminal Registration</h1>
+    <form action="/register-criminal/{{ station_id }}" method="POST">
+        <label for="name">Name:</label><br>
+        <input type="text" id="name" name="name" required><br>
+        <label for="crime_id">Crime ID:</label><br>
+        <select id="crime_id" name="crime_id" required>
+            {% for crime_id in crime_ids %}
+            <option value="{{ crime_id }}">{{ crime_id }}</option>
+            {% endfor %}
+        </select><br>
+        <button type="submit">Register Criminal</button>
+    </form>
+</body>
+</html>
